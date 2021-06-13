@@ -1,1 +1,10 @@
-
+# https://www.youtube.com/watch?v=MEaQc1gslZg
+# Reverse Linked List 
+def reverseLinkedList(head):
+  prev = None
+  while head:
+    next_node = head.next
+    head.next = prev
+    prev = head
+    head = next_node
+    return prev
