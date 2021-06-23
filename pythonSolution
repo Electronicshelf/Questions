@@ -8,3 +8,28 @@ def reverseLinkedList(head):
     prev = head
     head = next_node
     return prev
+
+
+
+class treeNode(object):
+  """ Defination of Binary Tree Node """
+  def __init__(self, x):
+    self.val = x
+    self.right = None
+    self.left  = 
+    """
+    root:  Tree NOde
+    rtype: int
+    """
+  def findMaxRoot(self, root):
+    # initialize condition
+    if root == none:
+      return 0
+
+    else:
+      # get branches of tree
+      left_tree = self.findMaxRoot(root.left)
+      right_tree = self.findMaxRoot(right.left)
+      # return max of the solution recursively
+      return max(left_tree, right_tree) + 1
+
