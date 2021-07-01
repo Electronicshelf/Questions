@@ -32,6 +32,10 @@ class treeNode(object):
       right_tree = self.findMaxRoot(right.left)
       # return max of the solution recursively
       return max(left_tree, right_tree) + 1
+      
+      
+      
+     
 
 
 # 101. Symmetric Tree
@@ -55,3 +59,37 @@ class Solution:
             outPair = self.validateSymtry(left.left, right.right)
             inPair  = self.validateSymtry(left.right, right.left)
             return outPair and inPair
+
+
+# Given an integer array nums, return 
+# all the triplets [nums[i], nums[j], nums[k]]
+#  such that i != j, i != k, and j != k,
+#  and nums[i] + nums[j] + nums[k] == 0.
+# https://www.youtube.com/watch?v=jzZsG8n2R9A
+
+def soln_threesum(nums):
+  # initialize the basics
+  res = []
+  nums.sort()
+
+  # Initiate CPR, Set conditions
+  for i, a in enumerate(nums):
+    # first value condition
+    if i > 0 and a == nums[i-1]:
+      continue
+    # move to 2sum technique for remaining
+    # intiate CPR for 2 Sum
+    l,r = i+1, len(nums)-1
+    while l < r:
+      threeSum = a + nums[l] + nums[r]
+      if threeSum > 0:
+        r -= 1
+      elif threeSum < 0:
+        l += 1
+      else:
+        res.append([a , nums[l], nums[r]])
+        # continue to update the entire 3Sum index for L
+        l += 1
+        while nums[l] == nums[l-1] and  l < r:
+          l+=1
+  return res
