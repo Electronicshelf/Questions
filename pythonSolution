@@ -93,3 +93,22 @@ def soln_threesum(nums):
         while nums[l] == nums[l-1] and  l < r:
           l+=1
   return res
+
+
+# https://www.youtube.com/watch?v=5D9OrHsw3M0
+# Rotate Array | LeetCode 189 | Python
+
+def reverse(self, nums, l, r):
+  # intiatpoe inters
+  while l < r:
+    # reverse indicating l and r
+    nums[l], nums[r] = nums[r],nums[l]
+    l += 1
+    r -= 1
+def rotate(nums, k):
+  n = len(nums)
+  k %= n
+  self.reverse(nums, 0, n-k-1)
+  self.reverse(nums, n-k, n-1)
+  self.reverse(nums, 0, n-1)
+
