@@ -9,8 +9,6 @@ def reverseLinkedList(head):
     head = next_node
     return prev
 
-
-
 class treeNode(object):
   """ Defination of Binary Tree Node """
   def __init__(self, x):
@@ -33,11 +31,7 @@ class treeNode(object):
       # return max of the solution recursively
       return max(left_tree, right_tree) + 1
       
-      
-      
-     
-
-
+   
 # 101. Symmetric Tree
 # Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
 class Solution:
