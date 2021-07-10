@@ -128,3 +128,47 @@ def rotate_image(matrix):
       matrix[top + i][r] = topLeft
     r-=1
     l+=1
+    
+    
+    
+    # Valid Sudoku
+# https://www.youtube.com/watch?v=TjFXEUCMqI8
+import collections
+
+board = [["5","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".","","8",".",".","7","9"]]
+
+def validSudoku(board):
+  # print(board)
+  """
+  Confirm if sudoku is valid
+  """
+  row  = collections.defaultdict(set)
+  col  = collections.defaultdict(set)
+  sqr  = collections.defaultdict(set)
+
+  for r in range(9):
+    for c in range(9):
+      if board[r][c] == ".":
+        continue
+        # print(row)
+      if (board[r][c] in row[r] or
+        board[r][c] in col[c] or
+        board[r][c] in sqr[(r//3,c//3)]):
+        print(board[r][c])
+        return False
+      # print(board[r][c])
+      row[r].add(board[r][c])
+      col[c].add(board[r][c])
+      sqr[(r//3,c//3)].add(board[r][c])
+  return True
+
+
+validSudoku(board)
