@@ -112,3 +112,25 @@ def rotate(nums, k):
   self.reverse(nums, n-k, n-1)
   self.reverse(nums, 0, n-1)
 
+# Rotate Image
+# www.youtube.com/watch?v=fMSJSS7eO1w&t=12s
+
+def rotate_image(matrix): 
+  
+  """
+  Rotate Image
+  """
+  
+  l, r = 0, len(matrix -1)
+  # Track index of the matrix
+  
+  while l < r :
+    for i in range(r - 1):
+      top, btm = l, r
+      topLeft = matrix[top][l + i]
+      matrix[top][l + i] = matrix[btm - i][l]
+      matrix[btm - i][l] = matrix[btm][r - i]
+      matrix[btm][r - i] = matrix[top + i][r]
+      matrix[top + i][r] = topLeft
+    r-=1
+    l+=1
