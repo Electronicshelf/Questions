@@ -196,6 +196,19 @@ def merge(num1, num2, m, n):
     print(num1)
 
 
+#############################
+# https://www.youtube.com/watch?v=Y0lT9Fck7qI
+# Climb Stairs
+
+def climbStairs(n):
+  curr, prev  = 1, 1
+  for i in range(n-1):
+    temp = curr
+    curr = curr + prev
+    prev = temp
+  return curr
+
+
 ################################################
 # https://www.youtube.com/watch?v=yE-dAuRTeCo
 # First Bad Version
