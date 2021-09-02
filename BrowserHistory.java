@@ -7,7 +7,7 @@ package linkedlisted;
 
 /**
  *
- * @author Habeeb O. Lawal
+ * @author Ayeni O. Femi
  */
 public class BrowserHistory {
     private LinkedListed history = new LinkedListed();
